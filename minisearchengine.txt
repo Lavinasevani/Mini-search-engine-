@@ -1,0 +1,79 @@
+import os
+import time
+from plyer import notification
+
+# Record the start time
+start_time = time.time()
+
+print(''' 
+These are Options:
+
+1. Chrome
+2. Youtube 
+3. Notepad
+4. Gmail
+5. Paint
+''')
+
+opt = input("\nSelect your option: ")
+print("Wait for 5 seconds")
+time.sleep(5)
+if opt == "1":
+    os.system("start chrome")
+
+    notification.notify(
+        title="CMD",
+        message="Opening Chrome",
+        timeout=2
+    )
+
+    print("Closing the application in 5 seconds...")
+    time.sleep(5)  # Wait for 5 seconds before closing
+    os.system("taskkill /f /im chrome.exe")  # Close Chrome
+elif opt == "2":
+    os.system("start chrome youtube.com")
+    notification.notify(
+        title="CMD",
+        message="Opening You Tube",
+        timeout=2
+    )
+    print("Closing the application in 5 seconds...")
+    time.sleep(5)  # Wait for 5 seconds before closing
+    os.system("taskkill /f /im chrome youtube.com.exe")
+elif opt == "3":
+    os.system("notepad")
+    notification.notify(
+        title="CMD",
+        message="Opening Notepad",
+        timeout=2
+    )
+    print("Closing the application in 5 seconds...")
+    time.sleep(5)  # Wait for 5 seconds before closing
+    os.system("taskkill /f /im notepad.exe")
+elif opt == "4":
+    os.system("start gmail.com")
+    notification.notify(
+        title="CMD",
+        message="Opening Gmail",
+        timeout=2
+    )
+    print("Closing the application in 5 seconds...")
+    time.sleep(5)  # Wait for 5 seconds before closing
+    os.system("taskkill /f /im gmail.com.exe")
+elif opt == "5":
+    os.system("mspaint")
+    notification.notify(
+        title="CMD",
+        message="Opening Mspaint",
+        timeout=2
+    )
+    print("Closing the application in 5 seconds...")
+    time.sleep(5)  # Wait for 5 seconds before closing
+    os.system("taskkill /f /im mspaint.exe")
+else:
+    print("The option is not present")
+
+# Calculate and display the running time
+end_time = time.time()
+running_time = end_time - start_time
+print(f"Running time: {running_time:.2f} seconds")
